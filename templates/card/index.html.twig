@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row pt-2 m-auto">
+            <div class="col-md-3 col-lg-3">
+                <div class="card card-custom bg-white border-white border-0">
+                    <div class="card-body">
+                        <img src="{{ asset('assets/img/cards.jpg') }}" alt="Colored cards" class="img-fluid">
+                        {% if app.request.attributes.get('_route') == 'card_run'%}
+                            <a href="{{ path('card') }}" class="btn btn-dark btn-lg btn-block">
+                                Réinitialiser
+                            </a>
+                        {% else %}
+                            <a href="{{ path('card_run') }}" class="btn btn-warning btn-lg btn-block">
+                                Tirer 10 cartes
+                            </a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-9">
+                {% include 'card/result.html.twig'  with {'cards': cards}%}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
