@@ -19,8 +19,8 @@ services:
     ports:
       - "9000:9001"
     volumes:
-      - .:/var/www/card_game:cached
-      - ./logs/php:/var/www/card_game/var/log:cached
+      - .:/var/www/card_game
+      - ./logs/php:/var/www/card_game/var/log
     depends_on:
       - db
     networks:
@@ -36,8 +36,8 @@ services:
     networks:
       - php
     volumes:
-      - ./logs/nginx:/var/log/nginx:cached
-      - .:/var/www/card_game:cached
+      - ./logs/nginx:/var/log/nginx
+      - .:/var/www/card_game
   adminer:
     image: adminer
     depends_on:
