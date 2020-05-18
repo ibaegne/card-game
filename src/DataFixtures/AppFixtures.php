@@ -13,7 +13,10 @@ class AppFixtures extends Fixture
      */
     private $_em;
 
-    public function load(ObjectManager $manager)
+    /**
+     * @param ObjectManager $manager
+     */
+    public function load(ObjectManager $manager): void
     {
         $this->_em = $manager;
 
@@ -25,6 +28,9 @@ class AppFixtures extends Fixture
         $this->_em->flush();
     }
 
+    /**
+     * @param string $color
+     */
     private function  cardBuilder(string $color): void
     {
         foreach ($this->initValues() as $value) {
@@ -37,6 +43,9 @@ class AppFixtures extends Fixture
         }
     }
 
+    /**
+     * @return array
+     */
     private function initValues(): array
     {
         return array_merge(range(2, 10), ['AS', 'Valet', 'Dame', 'Roi']);

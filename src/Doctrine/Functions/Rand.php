@@ -10,15 +10,22 @@ use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 
 class Rand extends FunctionNode
 {
-
-    public function parse(Parser $parser)
+    /**
+     * @param Parser $parser
+     * @throws \Doctrine\ORM\Query\QueryException
+     */
+    public function parse(Parser $parser): void
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 
-    public function getSql(SqlWalker $sqlWalker)
+    /**
+     * @param SqlWalker $sqlWalker
+     * @return string
+     */
+    public function getSql(SqlWalker $sqlWalker): string
     {
         return 'RAND()';
     }

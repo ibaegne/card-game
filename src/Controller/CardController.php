@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CardController extends AbstractController
 {
-
     /**
      * @Route("/", name="card")
      *
@@ -34,5 +33,4 @@ class CardController extends AbstractController
             'cards' => $cards
         ]);
     }
-
 }
