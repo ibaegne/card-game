@@ -1,19 +1,23 @@
-Procédure d'installation de mon super jeux de carte
+Procédure d'installation du super jeu de cartes
 ===================================================
-# Etape 1 
- Lancer la commande: 
+
+Tout d'abord, clonez ce référentiel:
+
+ ```sh
+ $  git clone https://github.com/ibaegne/card-game.git
+ ``` 
+
+Ensuite, exécutez ces différentes commandes
+
+ ```sh
+ $ cd card-game
+ ```
  ```sh
  $  composer install 
  ```
- 
- # Etape 2
-  Lancer la commande:
-   ```sh
-   $  docker-compose up -d --build
-   ```
-
- # Etape 3
- Lancer les commandes:
+ ```sh
+ $  docker-compose up -d --build
+ ```
  ```sh
  $  docker exec -it php-fpm sh
  $  php bin/console d:d:c
@@ -21,8 +25,11 @@ Procédure d'installation de mon super jeux de carte
  $  php bin/console doctrine:fixtures:load
  ```
 
- # Etape 4
- Vous avez terminé, vous pouvez visiter votre jeux sur l'URL suivante: `http://localhost:8082`
- (et l'access à la base de donnée sur `http://localhost:8001`)
+ Vous avez terminé, vous pouvez visiter votre jeu sur l'URL suivante: `http://localhost:8082`
+ et l'access à la base de donnée sur `http://localhost:8001`
+ 
+ | Serveur | db |
+ | Utilisateur | admin |
+ | Mot de passe	| admin |
     
    
