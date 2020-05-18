@@ -28,8 +28,8 @@ Ensuite, exécutez ces différentes commandes
  Vous avez terminé, vous pouvez visiter votre jeu sur l'URL suivante: `http://localhost:8082`
  et l'access à la base de donnée sur `http://localhost:8001`
  
- | Serveur | db |
- | Utilisateur | admin |
- | Mot de passe	| admin |
+ Serveur | Utilisateur | Mot de passe
+ --- | --- | ---
+ db | admin | admin
     
    
