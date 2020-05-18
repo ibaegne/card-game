@@ -19,13 +19,18 @@ class CardRepository extends ServiceEntityRepository
         parent::__construct($registry, Card::class);
     }
 
-    public function findRandom($max) {
+    /**
+     * @param int $max
+     * @return array
+     */
+    public function findRandom(int $max): array
+    {
         return $this->createQueryBuilder('c')
+            ->select('c.color, c.value')
             ->orderBy('RAND()')
             ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
+            ->getArrayResult()
             ;
     }
-
 }

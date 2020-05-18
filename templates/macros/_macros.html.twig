@@ -1,0 +1,9 @@
+{% macro display_sort(data) %}
+    <ul class="list-group">
+        {% for value in data|mysort %}
+            <li class="list-group-item">
+                <img src="{{ asset('assets/img/' ~ value ~ '.PNG') }}" alt="" class="img-fluid">
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

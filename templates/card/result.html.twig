@@ -5,7 +5,7 @@
             <div class="col-md-3 col-lg-3">
                 <div class="card card-custom bg-white border-white border-0">
                     <div class="card-body">
-                        <img src="{{ asset('assets/img/' ~ image_name|lower ~ '.PNG') }}" alt="Colored cards" class="img-fluid">
+                        <img src="{{ asset('assets/img/' ~ image_name|lower ~ '.PNG') }}" alt="{{ card.value ~ ' ' ~ card.color }}" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -13,7 +13,7 @@
         <div class="col-md-6 col-lg-6">
             <div class="card card-custom bg-white border-white border-0">
                 <div class="card-body">
-                    <button type="button" class="btn btn-warning btn-lg btn-block">
+                    <button type="button" class="btn btn-warning btn-lg btn-block sorted">
                         Trier
                     </button>
                 </div>
@@ -25,7 +25,7 @@
             <div class="col-md-3 col-lg-3">
                 <div class="card card-custom bg-white border-white border-0">
                     <div class="card-body">
-                        <img src="{{ asset('assets/img/empty.png') }}" alt="Colored cards" class="img-fluid">
+                        <img src="{{ asset('assets/img/empty.png') }}" alt="empty card" class="img-fluid">
                     </div>
                 </div>
             </div>

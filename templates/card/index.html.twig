@@ -2,11 +2,14 @@
 
 {% block body %}
     <div class="container">
-        <div class="row pt-2 m-auto">
+        <div class="row justify-content-center pt-2">
+            <h1> Super jeu de cartes</h1>
+        </div>
+        <div class="row m-auto">
             <div class="col-md-3 col-lg-3">
                 <div class="card card-custom bg-white border-white border-0">
                     <div class="card-body">
-                        <img src="{{ asset('assets/img/cards.jpg') }}" alt="Colored cards" class="img-fluid">
+                        <img src="{{ asset('assets/img/cards.jpg') }}" alt="pile card" class="img-fluid">
                         {% if app.request.attributes.get('_route') == 'card_run'%}
                             <a href="{{ path('card') }}" class="btn btn-dark btn-lg btn-block">
                                 Réinitialiser
@@ -20,10 +23,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9 col-lg-9">
-                {% include 'card/result.html.twig'  with {'cards': cards}%}
+            <div class="col-md-9 col-lg-9" id="result">
+                {% include 'card/result.html.twig'  with {'cards': cards|default(null)}%}
+            </div>
+            <div class="col-md-9 col-lg-9" id="sorted">
+                {% include 'card/sorted_result.html.twig'  with {'cards': cards|default(null)}%}
             </div>
         </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/custom.js') }}"> </script>
 {% endblock %}
